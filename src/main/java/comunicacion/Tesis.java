@@ -66,18 +66,25 @@ public class Tesis extends Escrito{
     }
 
     @Override
-    int palabrasTotales(int palabrasPagina) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int palabrasTotales(int palabrasPagina) {
+        return this.getPaginas() * palabrasPagina * 5;
     }
 
     @Override
-    String interpretacion() {
+    public String interpretacion() {
         return interpretacion;
     }
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.getOrigen() + "\n"
+                + this.getTitulo() + "\n"
+                + this.getAutor() + "\n"
+                + this.getPaginas() + "\n"
+                + idea + "\n"
+                + argumentos.length + "\n"
+                + conclusion + "\n"
+                + referencia;
     }
     
     

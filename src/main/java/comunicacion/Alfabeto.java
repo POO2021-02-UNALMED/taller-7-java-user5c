@@ -10,21 +10,21 @@ package comunicacion;
  * @author camilo
  */
 public class Alfabeto extends Pictograma {
-    private String[] letra;
+    private String[] letras;
     private String interpretacion;
 
-    public Alfabeto(String origen, String[] letra, String interpretacion) {
+    public Alfabeto(String origen, String[] letras, String interpretacion) {
         super(origen);
-        this.letra = letra;
+        this.letras = letras;
         this.interpretacion = interpretacion;
     }
 
-    public String[] getLetra() {
-        return letra;
+    public String[] getLetras() {
+        return letras;
     }
 
-    public void setLetra(String[] letra) {
-        this.letra = letra;
+    public void setLetras(String[] letras) {
+        this.letras = letras;
     }
 
     public String getInterpretacion() {
@@ -36,17 +36,21 @@ public class Alfabeto extends Pictograma {
     }
 
     @Override
-    String interpretacion() {
+    public String interpretacion() {
         return interpretacion;
     }
 
     @Override
     public String toString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String letras_unidas = "";
+        for(String letra: this.letras){
+            letras_unidas += letra + ", ";
+        }
+        return letras_unidas.substring(0, letras_unidas.length()-2);
     }
     
     public int cantidadLetras() {
-        return 0;
+        return letras.length;
     }
     
 }
